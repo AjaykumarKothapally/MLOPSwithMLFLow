@@ -106,3 +106,114 @@ Traceback (most recent call last):
   File "/usr/lib/python3.10/zipfile.py", line 1339, in _RealGetContents
     raise BadZipFile("File is not a zip file")
 zipfile.BadZipFile: File is not a zip file
+[2024-11-21 12:59:10,257: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-11-21 12:59:10,271: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-21 12:59:10,287: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-21 12:59:10,289: INFO: common: created directory at: artifacts]
+[2024-11-21 12:59:10,291: INFO: common: created directory at: artifacts/data_validation]
+[2024-11-21 13:47:11,577: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-11-21 13:47:11,580: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-11-21 13:47:11,583: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-21 13:47:11,587: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-21 13:47:11,588: INFO: common: created directory at: artifacts]
+[2024-11-21 13:47:11,588: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-21 13:47:11,588: INFO: data_ingestion: File already exists of size: ~ 284 KB]
+[2024-11-21 13:47:11,590: ERROR: main: File is not a zip file]
+Traceback (most recent call last):
+  File "/home/ML/MLOPSwithMLFLow/main.py", line 10, in <module>
+    data_ingestion.main()
+  File "/home/ML/MLOPSwithMLFLow/src/mlProject/pipeline/stage_01_data_ingestion.py", line 18, in main
+    data_ingestion.extract_zip_file()
+  File "/home/ML/MLOPSwithMLFLow/src/mlProject/components/data_ingestion.py", line 35, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+  File "/usr/lib/python3.10/zipfile.py", line 1272, in __init__
+    self._RealGetContents()
+  File "/usr/lib/python3.10/zipfile.py", line 1339, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+[2024-11-21 16:00:36,809: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-11-21 16:00:36,813: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-11-21 16:00:36,815: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-21 16:00:36,817: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-21 16:00:36,819: INFO: common: created directory at: artifacts]
+[2024-11-21 16:00:36,819: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-21 16:00:38,931: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Server: GitHub.com
+Date: Thu, 21 Nov 2024 10:29:24 GMT
+Content-Type: text/html; charset=utf-8
+Vary: X-PJAX, X-PJAX-Container, Turbo-Visit, Turbo-Frame, Accept-Encoding, Accept, X-Requested-With
+ETag: W/"c7b46952ad7583c474e426f24ff4c656"
+Cache-Control: max-age=0, private, must-revalidate
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+X-Frame-Options: deny
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 0
+Referrer-Policy: no-referrer-when-downgrade
+Content-Security-Policy: default-src 'none'; base-uri 'self'; child-src github.com/assets-cdn/worker/ github.com/webpack/ github.com/assets/ gist.github.com/assets-cdn/worker/; connect-src 'self' uploads.github.com www.githubstatus.com collector.github.com raw.githubusercontent.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com *.rel.tunnels.api.visualstudio.com wss://*.rel.tunnels.api.visualstudio.com objects-origin.githubusercontent.com copilot-proxy.githubusercontent.com proxy.individual.githubcopilot.com proxy.business.githubcopilot.com proxy.enterprise.githubcopilot.com *.actions.githubusercontent.com wss://*.actions.githubusercontent.com productionresultssa0.blob.core.windows.net/ productionresultssa1.blob.core.windows.net/ productionresultssa2.blob.core.windows.net/ productionresultssa3.blob.core.windows.net/ productionresultssa4.blob.core.windows.net/ productionresultssa5.blob.core.windows.net/ productionresultssa6.blob.core.windows.net/ productionresultssa7.blob.core.windows.net/ productionresultssa8.blob.core.windows.net/ productionresultssa9.blob.core.windows.net/ productionresultssa10.blob.core.windows.net/ productionresultssa11.blob.core.windows.net/ productionresultssa12.blob.core.windows.net/ productionresultssa13.blob.core.windows.net/ productionresultssa14.blob.core.windows.net/ productionresultssa15.blob.core.windows.net/ productionresultssa16.blob.core.windows.net/ productionresultssa17.blob.core.windows.net/ productionresultssa18.blob.core.windows.net/ productionresultssa19.blob.core.windows.net/ github-production-repository-image-32fea6.s3.amazonaws.com github-production-release-asset-2e65be.s3.amazonaws.com insights.github.com wss://alive.github.com api.githubcopilot.com api.individual.githubcopilot.com api.business.githubcopilot.com api.enterprise.githubcopilot.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com copilot-workspace.githubnext.com objects-origin.githubusercontent.com; frame-ancestors 'none'; frame-src viewscreen.githubusercontent.com notebooks.githubusercontent.com; img-src 'self' data: blob: github.githubassets.com media.githubusercontent.com camo.githubusercontent.com identicons.github.com avatars.githubusercontent.com private-avatars.githubusercontent.com github-cloud.s3.amazonaws.com objects.githubusercontent.com secured-user-images.githubusercontent.com/ user-images.githubusercontent.com/ private-user-images.githubusercontent.com opengraph.githubassets.com github-production-user-asset-6210df.s3.amazonaws.com customer-stories-feed.github.com spotlights-feed.github.com objects-origin.githubusercontent.com *.githubusercontent.com; manifest-src 'self'; media-src github.com user-images.githubusercontent.com/ secured-user-images.githubusercontent.com/ private-user-images.githubusercontent.com github-production-user-asset-6210df.s3.amazonaws.com gist.github.com; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; upgrade-insecure-requests; worker-src github.com/assets-cdn/worker/ github.com/webpack/ github.com/assets/ gist.github.com/assets-cdn/worker/
+Set-Cookie: _gh_sess=r6tZ7A1fEq2nNZWt2IjZpaWHxr5YLfVnSbuhQePy%2FMd8ZBGsogZ5lVr36KQJ9di%2Fk%2BqQyvjpwRkRV6DLQ0yGb8RU1x9HHA2Ybr5Q3NdC4bTYqw5yVYt5Xky6S6VdELZaw6P5eKdLCZKcBHyFdUSbbFVLhnNaIiXgPrmQcObbKz2wWLsMJK%2BoINCLo4Yttyelq6Msyf4XljjgapCiTYqGv%2BeS8J1z7MCplAX2c7NHylfjRWkieDh4i1OrLGg3yZCFW7uvCYKAf8NiG4PNnSyFpA%3D%3D--lqU1zVXWho%2Bzda3q--%2FjVGosaX03JN%2Fz3E7Wuj0A%3D%3D; Path=/; HttpOnly; Secure; SameSite=Lax
+Set-Cookie: _octo=GH1.1.1069010446.1732184964; Path=/; Domain=github.com; Expires=Fri, 21 Nov 2025 10:29:24 GMT; Secure; SameSite=Lax
+Set-Cookie: logged_in=no; Path=/; Domain=github.com; Expires=Fri, 21 Nov 2025 10:29:24 GMT; HttpOnly; Secure; SameSite=Lax
+Accept-Ranges: bytes
+Transfer-Encoding: chunked
+X-GitHub-Request-Id: CADC:1C7014:4083B87:41E410E:673F0B83
+connection: close
+
+]
+[2024-11-21 16:00:38,932: ERROR: main: File is not a zip file]
+Traceback (most recent call last):
+  File "/home/ML/MLOPSwithMLFLow/main.py", line 10, in <module>
+    data_ingestion.main()
+  File "/home/ML/MLOPSwithMLFLow/src/mlProject/pipeline/stage_01_data_ingestion.py", line 18, in main
+    data_ingestion.extract_zip_file()
+  File "/home/ML/MLOPSwithMLFLow/src/mlProject/components/data_ingestion.py", line 35, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+  File "/usr/lib/python3.10/zipfile.py", line 1272, in __init__
+    self._RealGetContents()
+  File "/usr/lib/python3.10/zipfile.py", line 1339, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+[2024-11-21 16:03:23,627: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-11-21 16:03:23,629: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-11-21 16:03:23,630: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-21 16:03:23,631: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-21 16:03:23,632: INFO: common: created directory at: artifacts]
+[2024-11-21 16:03:23,633: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-21 16:03:24,319: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 23329
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "c69888a4ae59bc5a893392785a938ccd4937981c06ba8a9d6a21aa52b4ab5b6e"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: B932:57A4B:13F270:18B609:673F0C2A
+Accept-Ranges: bytes
+Date: Thu, 21 Nov 2024 10:32:10 GMT
+Via: 1.1 varnish
+X-Served-By: cache-hyd1100022-HYD
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1732185130.315045,VS0,VE287
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: d4d1a8c70c80b840c8015125fc36f6b0627a342a
+Expires: Thu, 21 Nov 2024 10:37:10 GMT
+Source-Age: 0
+
+]
+[2024-11-21 16:03:24,323: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-11-21 16:03:24,323: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-11-21 16:03:24,325: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-11-21 16:03:24,326: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-21 16:03:24,329: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-21 16:03:24,329: INFO: common: created directory at: artifacts]
+[2024-11-21 16:03:24,330: INFO: common: created directory at: artifacts/data_validation]
+[2024-11-21 16:03:24,357: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
