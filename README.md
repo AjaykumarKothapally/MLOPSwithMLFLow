@@ -103,7 +103,7 @@ export MLFLOW_TRACKING_PASSWORD=52869039035104b179167156b2455e710aa55d69
 
     5. Lauch your docker image in EC2
 
-    #Policy:
+    #Policyiam:
 
     1. AmazonEC2ContainerRegistryFullAccess
 
