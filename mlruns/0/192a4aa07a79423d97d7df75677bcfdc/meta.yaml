@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ML/MLOPSwithMLFLow/mlruns/0/192a4aa07a79423d97d7df75677bcfdc/artifacts
+end_time: 1732269586196
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 192a4aa07a79423d97d7df75677bcfdc
+run_name: mysterious-carp-52
+run_uuid: 192a4aa07a79423d97d7df75677bcfdc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732269583651
+status: 3
+tags: []
+user_id: root
