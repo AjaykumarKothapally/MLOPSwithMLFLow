@@ -5,7 +5,7 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  source_URL: https://raw.githubusercontent.com/AjaykumarKothapally/AWS_Data_Engineering/12c84192519850e736118b98f3c0accfa57855fb/data.zip
+  source_URL: https://raw.githubusercontent.com/AjaykumarKothapally/AWS_Data_Engineering/refs/heads/main/data.zip
   local_data_file: artifacts/data_ingestion/data.zip
   unzip_dir: artifacts/data_ingestion
 

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ML/MLOPSwithMLFLow/mlruns/0/478d531cc72b43f38494978b1cb80fa6/artifacts
+end_time: 1734416337420
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 478d531cc72b43f38494978b1cb80fa6
+run_name: grandiose-fish-119
+run_uuid: 478d531cc72b43f38494978b1cb80fa6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734416335061
+status: 3
+tags: []
+user_id: root
