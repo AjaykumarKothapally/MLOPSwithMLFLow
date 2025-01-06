@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mlops-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: mlops
+  ports:
+    - protocol: TCP
+      port: 80 # Port exposed to the public
+      targetPort: 80 # Maps to the container port in Deployment

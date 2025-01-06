@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ML/MLOPSwithMLFLow/mlruns/0/f7048bbba1714a0f80b789c677226d07/artifacts
+end_time: 1734420210429
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f7048bbba1714a0f80b789c677226d07
+run_name: luminous-carp-591
+run_uuid: f7048bbba1714a0f80b789c677226d07
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734420207534
+status: 3
+tags: []
+user_id: root

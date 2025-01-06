@@ -1109,3 +1109,133 @@ x==========x]
  * Running on http://127.0.0.1:8080
  * Running on http://172.17.77.136:8080]
 [2024-12-17 11:49:03,365: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-12-17 11:50:20,285: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.17.77.136:8080]
+[2024-12-17 11:50:20,286: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-12-17 11:50:22,357: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 11:50:22] "GET / HTTP/1.1" 200 -]
+[2024-12-17 11:50:22,429: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 11:50:22] "[36mGET /static/css2/nunito-font.css HTTP/1.1[0m" 304 -]
+[2024-12-17 11:50:22,438: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 11:50:22] "[36mGET /static/css2/style.css HTTP/1.1[0m" 304 -]
+[2024-12-17 11:50:22,445: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 11:50:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -]
+[2024-12-17 11:50:22,455: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 11:50:22] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -]
+[2024-12-17 11:50:22,540: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 11:50:22] "[33mGET /static/assets/img/wine.jpg HTTP/1.1[0m" 404 -]
+[2024-12-17 11:50:22,543: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 11:50:22] "[36mGET /static/assets/img/form-v9.jpg HTTP/1.1[0m" 304 -]
+[2024-12-17 11:50:22,594: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 11:50:22] "[33mGET /static/fonts/Nunito/Nunito-Bold.ttf HTTP/1.1[0m" 404 -]
+[2024-12-17 11:50:28,734: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 11:50:28] "POST /predict HTTP/1.1" 200 -]
+[2024-12-17 11:50:28,750: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 11:50:28] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -]
+[2024-12-17 11:50:28,753: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 11:50:28] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -]
+[2024-12-17 11:50:28,779: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 11:50:28] "[33mGET /static/assets/img/wine.gif HTTP/1.1[0m" 404 -]
+[2024-12-17 12:25:56,324: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 12:25:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -]
+[2024-12-17 12:53:27,107: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-12-17 12:53:27,111: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-17 12:53:27,114: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 12:53:27,117: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 12:53:27,117: INFO: common: created directory at: artifacts]
+[2024-12-17 12:53:27,118: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-17 12:53:27,118: INFO: data_ingestion: File already exists of size: ~ 23 KB]
+[2024-12-17 12:53:27,126: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-12-17 12:53:27,126: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-12-17 12:53:27,128: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-17 12:53:27,129: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 12:53:27,130: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 12:53:27,130: INFO: common: created directory at: artifacts]
+[2024-12-17 12:53:27,130: INFO: common: created directory at: artifacts/data_validation]
+[2024-12-17 12:53:27,150: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-12-17 12:53:27,150: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-12-17 12:53:27,154: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-17 12:53:27,155: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 12:53:27,158: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 12:53:27,158: INFO: common: created directory at: artifacts]
+[2024-12-17 12:53:27,158: INFO: common: created directory at: artifacts/data_transformation]
+[2024-12-17 12:53:27,189: INFO: data_transformation: Splited data into training and test sets]
+[2024-12-17 12:53:27,189: INFO: data_transformation: (1199, 12)]
+[2024-12-17 12:53:27,190: INFO: data_transformation: (400, 12)]
+[2024-12-17 12:53:27,190: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-12-17 12:53:27,190: INFO: main: >>>>>> stage Model Training stage started <<<<<<]
+[2024-12-17 12:53:27,193: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-17 12:53:27,194: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 12:53:27,197: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 12:53:27,198: INFO: common: created directory at: artifacts]
+[2024-12-17 12:53:27,199: INFO: common: created directory at: artifacts/model_trainer]
+[2024-12-17 12:53:27,254: INFO: main: >>>>>> stage Model Training stage completed <<<<<<
+
+x==========x]
+[2024-12-17 12:53:27,254: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2024-12-17 12:53:27,258: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-17 12:53:27,259: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 12:53:27,261: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 12:53:27,262: INFO: common: created directory at: artifacts]
+[2024-12-17 12:53:27,262: INFO: common: created directory at: artifacts/model_evaluation]
+[2024-12-17 12:53:27,559: INFO: common: json file saved at: artifacts/model_evaluation/metrics.json]
+[2024-12-17 12:53:30,430: INFO: main: >>>>>> stage Model evaluation stage completed <<<<<<
+
+x==========x]
+[2024-12-17 12:53:49,580: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.17.77.136:8080]
+[2024-12-17 12:53:49,581: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-12-17 12:53:57,616: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 12:53:57] "GET / HTTP/1.1" 200 -]
+[2024-12-17 12:53:57,697: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 12:53:57] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -]
+[2024-12-17 12:53:57,698: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 12:53:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -]
+[2024-12-17 12:53:57,712: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 12:53:57] "[36mGET /static/css2/nunito-font.css HTTP/1.1[0m" 304 -]
+[2024-12-17 12:53:57,720: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 12:53:57] "[36mGET /static/css2/style.css HTTP/1.1[0m" 304 -]
+[2024-12-17 12:53:57,768: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 12:53:57] "[36mGET /static/assets/img/form-v9.jpg HTTP/1.1[0m" 304 -]
+[2024-12-17 12:53:57,770: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 12:53:57] "[33mGET /static/assets/img/wine.jpg HTTP/1.1[0m" 404 -]
+[2024-12-17 12:53:57,828: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 12:53:57] "[33mGET /static/fonts/Nunito/Nunito-Bold.ttf HTTP/1.1[0m" 404 -]
+[2024-12-18 23:26:33,781: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.17.77.136:8080]
+[2024-12-18 23:26:33,782: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-12-18 23:26:36,628: INFO: _internal: 127.0.0.1 - - [18/Dec/2024 23:26:36] "GET / HTTP/1.1" 200 -]
+[2024-12-18 23:26:36,748: INFO: _internal: 127.0.0.1 - - [18/Dec/2024 23:26:36] "[36mGET /static/css2/style.css HTTP/1.1[0m" 304 -]
+[2024-12-18 23:26:36,752: INFO: _internal: 127.0.0.1 - - [18/Dec/2024 23:26:36] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -]
+[2024-12-18 23:26:36,754: INFO: _internal: 127.0.0.1 - - [18/Dec/2024 23:26:36] "[36mGET /static/css2/nunito-font.css HTTP/1.1[0m" 304 -]
+[2024-12-18 23:26:36,755: INFO: _internal: 127.0.0.1 - - [18/Dec/2024 23:26:36] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -]
+[2024-12-18 23:26:36,896: INFO: _internal: 127.0.0.1 - - [18/Dec/2024 23:26:36] "[33mGET /static/assets/img/wine.jpg HTTP/1.1[0m" 404 -]
+[2024-12-18 23:26:36,899: INFO: _internal: 127.0.0.1 - - [18/Dec/2024 23:26:36] "[36mGET /static/assets/img/form-v9.jpg HTTP/1.1[0m" 304 -]
+[2024-12-18 23:26:37,007: INFO: _internal: 127.0.0.1 - - [18/Dec/2024 23:26:37] "[33mGET /static/fonts/Nunito/Nunito-Bold.ttf HTTP/1.1[0m" 404 -]
+[2024-12-18 23:27:13,863: INFO: _internal: 127.0.0.1 - - [18/Dec/2024 23:27:13] "POST /predict HTTP/1.1" 200 -]
+[2024-12-18 23:27:13,898: INFO: _internal: 127.0.0.1 - - [18/Dec/2024 23:27:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -]
+[2024-12-18 23:27:13,957: INFO: _internal: 127.0.0.1 - - [18/Dec/2024 23:27:13] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -]
+[2024-12-18 23:27:14,030: INFO: _internal: 127.0.0.1 - - [18/Dec/2024 23:27:14] "[33mGET /static/assets/img/wine.gif HTTP/1.1[0m" 404 -]
+[2025-01-02 16:04:10,628: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.17.77.136:8080]
+[2025-01-02 16:04:10,628: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-01-02 16:04:14,491: INFO: _internal: 127.0.0.1 - - [02/Jan/2025 16:04:14] "GET / HTTP/1.1" 200 -]
+[2025-01-02 16:04:14,635: INFO: _internal: 127.0.0.1 - - [02/Jan/2025 16:04:14] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -]
+[2025-01-02 16:04:14,636: INFO: _internal: 127.0.0.1 - - [02/Jan/2025 16:04:14] "[36mGET /static/css2/style.css HTTP/1.1[0m" 304 -]
+[2025-01-02 16:04:14,637: INFO: _internal: 127.0.0.1 - - [02/Jan/2025 16:04:14] "[36mGET /static/css2/nunito-font.css HTTP/1.1[0m" 304 -]
+[2025-01-02 16:04:14,639: INFO: _internal: 127.0.0.1 - - [02/Jan/2025 16:04:14] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -]
+[2025-01-02 16:04:15,155: INFO: _internal: 127.0.0.1 - - [02/Jan/2025 16:04:15] "[33mGET /static/assets/img/wine.jpg HTTP/1.1[0m" 404 -]
+[2025-01-02 16:04:15,157: INFO: _internal: 127.0.0.1 - - [02/Jan/2025 16:04:15] "[36mGET /static/assets/img/form-v9.jpg HTTP/1.1[0m" 304 -]
+[2025-01-02 16:04:15,209: INFO: _internal: 127.0.0.1 - - [02/Jan/2025 16:04:15] "[33mGET /static/fonts/Nunito/Nunito-Bold.ttf HTTP/1.1[0m" 404 -]
+[2025-01-02 16:04:15,363: INFO: _internal: 127.0.0.1 - - [02/Jan/2025 16:04:15] "GET /static/assets/favicon.ico HTTP/1.1" 200 -]
+[2025-01-02 16:04:21,376: INFO: _internal: 127.0.0.1 - - [02/Jan/2025 16:04:21] "POST /predict HTTP/1.1" 200 -]
+[2025-01-02 16:04:21,403: INFO: _internal: 127.0.0.1 - - [02/Jan/2025 16:04:21] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -]
+[2025-01-02 16:04:21,407: INFO: _internal: 127.0.0.1 - - [02/Jan/2025 16:04:21] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -]
+[2025-01-02 16:04:21,447: INFO: _internal: 127.0.0.1 - - [02/Jan/2025 16:04:21] "[33mGET /static/assets/img/wine.gif HTTP/1.1[0m" 404 -]
+[2025-01-03 16:42:27,648: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://172.17.77.136:80]
+[2025-01-03 16:42:27,649: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-01-03 16:42:29,497: INFO: _internal: 127.0.0.1 - - [03/Jan/2025 16:42:29] "GET / HTTP/1.1" 200 -]
+[2025-01-03 16:42:29,698: INFO: _internal: 127.0.0.1 - - [03/Jan/2025 16:42:29] "GET /static/css/styles.css HTTP/1.1" 200 -]
+[2025-01-03 16:42:29,737: INFO: _internal: 127.0.0.1 - - [03/Jan/2025 16:42:29] "GET /static/css2/nunito-font.css HTTP/1.1" 200 -]
+[2025-01-03 16:42:30,007: INFO: _internal: 127.0.0.1 - - [03/Jan/2025 16:42:30] "GET /static/css2/style.css HTTP/1.1" 200 -]
+[2025-01-03 16:42:30,010: INFO: _internal: 127.0.0.1 - - [03/Jan/2025 16:42:30] "GET /static/js/scripts.js HTTP/1.1" 200 -]
+[2025-01-03 16:42:31,397: INFO: _internal: 127.0.0.1 - - [03/Jan/2025 16:42:31] "[33mGET /static/assets/img/wine.jpg HTTP/1.1[0m" 404 -]
+[2025-01-03 16:42:31,399: INFO: _internal: 127.0.0.1 - - [03/Jan/2025 16:42:31] "[33mGET /static/fonts/Nunito/Nunito-Bold.ttf HTTP/1.1[0m" 404 -]
+[2025-01-03 16:42:31,451: INFO: _internal: 127.0.0.1 - - [03/Jan/2025 16:42:31] "GET /static/assets/img/form-v9.jpg HTTP/1.1" 200 -]
+[2025-01-03 16:42:31,671: INFO: _internal: 127.0.0.1 - - [03/Jan/2025 16:42:31] "GET /static/assets/favicon.ico HTTP/1.1" 200 -]

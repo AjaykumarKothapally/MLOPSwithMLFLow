@@ -1,98 +1,69 @@
-name: workflow
+name: CI/CD to AWS EKS
 
 on:
   push:
     branches:
       - main
-    paths-ignore:
-      - "README.md"
-
-permissions:
-  id-token: write
-  contents: read
 
 jobs:
-  integration:
-    name: Continuous Integration
+  build-and-deploy:
+    name: Build, Push to ECR, and Deploy to EKS
     runs-on: ubuntu-latest
+
+    env:
+      AWS_REGION: ap-south-1
+      ECR_REPOSITORY: 905418476815.dkr.ecr.ap-south-1.amazonaws.com/mytest
+      CLUSTER_NAME: mlprojectcluster
+
     steps:
-      - name: Checkout Code
+      # Step 1: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Lint code
-        run: echo "Linting/fetching repository"
-
-      - name: Run unit tests
-        run: echo "Running unit tests"
-
-  build-and-push-ecr-image:
-    name: Continuous Delivery
-    needs: integration
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Install Utilities
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y jq unzip
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
+      # Step 2: Configure AWS Credentials using GitHub Secrets
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: ${{ env.AWS_REGION }}
 
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
-
-      - name: Build, tag, and push image to Amazon ECR
-        id: build-image
-        env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
-          IMAGE_TAG: latest
+      # Step 3: Log in to ECR
+      - name: Log in to Amazon ECR
+        id: ecr-login
         run: |
-          # Build a docker container and
-          # push it to ECR so that it can
-          # be deployed to ECS.
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REPOSITORY
 
-  Continuous-Deployment:
-    needs: build-and-push-ecr-image
-    runs-on: self-hosted
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
-
-      - name: Pull latest images
+      # Step 4: Build and tag Docker image
+      - name: Build Docker image
         run: |
-          docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+          docker build -t mytest:latest .
+          docker tag mytest:latest $ECR_REPOSITORY:latest
 
-      # - name: Stop and remove container if running
-      #   run: |
-      #    docker ps -q --filter "name=mlproj" | grep -q . && docker stop mlproj && docker rm -fv mlproj
+      # Step 5: Push Docker image to ECR
+      - name: Push Docker image to Amazon ECR
+        run: |
+          docker push $ECR_REPOSITORY:latest
 
-      - name: Run Docker Image to serve users
+      # Step 6: Update deployment YAML with the latest ECR image
+      - name: Update deployment image
         run: |
-          docker run -d -p 8080:8080 --name=mlproj -e 'AWS_REGION=${{ secrets.AWS_REGION }}' -e 'AWS_ECR_LOGIN_URI=${{ secrets.AWS_ECR_LOGIN_URI }}' ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
-      - name: Clean previous images and containers
+          sed -i "s|image:.*|image: $ECR_REPOSITORY:latest|g" deployment.yaml
+
+      # Step 7: Configure kubectl for EKS
+      - name: Configure kubectl
         run: |
-          docker system prune -f
+          aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER_NAME
+
+      # Step 8: Deploy to EKS
+      - name: Deploy to Amazon EKS
+        run: |
+          kubectl apply -f deployment.yaml
+          kubectl apply -f service.yaml
+
+      # Step 9: Verify deployment
+      - name: Verify deployment
+        run: |
+          kubectl rollout status deployment/mlops-app
+          kubectl get svc
