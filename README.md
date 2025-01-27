@@ -40,7 +40,7 @@ pip install -r requirements.txt
 
 ```bash
 # Finally run the following command
-python app.py
+python3 app.py
 ```
 
 Now,
